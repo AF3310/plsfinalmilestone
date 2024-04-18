@@ -9,11 +9,12 @@ const ChannelFilterer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch(`https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/users2?latitude=${latitude}&direction=${direction}`);
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
+    
+  try {
+    const response = await fetch(`https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/users2?latitude=${latitude}&direction=${direction}`, {
+      mode: 'no-cors' // Specify no-cors mode
+    });
+
       const data = await response.json();
       setChannels(data);
       setErrorMessage('');
