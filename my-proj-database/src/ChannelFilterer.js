@@ -10,7 +10,7 @@ const ChannelFilterer = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/users2?latitude=${latitude}&direction=${direction}`);
+      const response = await fetch(`https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/users2?latitude=${latitude}&direction=${direction}`);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

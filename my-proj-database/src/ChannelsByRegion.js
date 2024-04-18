@@ -8,7 +8,7 @@ const ChannelsByRegion = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/getChannelsByRegion', {
+      const response = await fetch('https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/getChannelsByRegion', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ region }),

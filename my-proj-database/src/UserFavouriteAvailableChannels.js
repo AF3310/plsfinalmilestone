@@ -8,7 +8,7 @@ const UserFavouriteAvailableChannels = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/data?email=${email}`);
+      const response = await fetch(`https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/data?email=${email}`);
       if (!response.ok) {
         throw new Error('Failed to fetch data');
       }

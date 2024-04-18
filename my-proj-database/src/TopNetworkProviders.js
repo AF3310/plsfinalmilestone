@@ -5,7 +5,7 @@ const TopNetworkProviders = () => {
   const [networkProviders, setNetworkProviders] = useState([]);
 
   useEffect(() => {
-    fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topNetworkProviders')
+    fetch('https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/topNetworkProviders')
       .then(response => response.json())
       .then(data => setNetworkProviders(data))
       .catch(error => console.error('Error:', error));

@@ -4,7 +4,7 @@ const TopChannels = () => {
   const [topChannels, setTopChannels] = useState([]);
 
   useEffect(() => {
-    fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topChannels')
+    fetch('https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/topChannels')
       .then(response => response.json())
       .then(data => setTopChannels(data))
       .catch(error => console.error('Error:', error));

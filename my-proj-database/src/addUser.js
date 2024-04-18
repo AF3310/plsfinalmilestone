@@ -34,7 +34,7 @@ const AddUser = () => {
       };
 
       // Send POST request to backend
-      const response = await fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/addUser', {
+      const response = await fetch('https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/addUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

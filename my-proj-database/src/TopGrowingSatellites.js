@@ -4,7 +4,7 @@ const TopGrowingSatellites = () => {
     const [satellites, setSatellites] = useState([]);
 
     useEffect(() => {
-        fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topGrowingSatellites')
+        fetch('https://plsfinalmilestone-pk8xag850-ali-fakhreldins-projects.vercel.app/topGrowingSatellites')
             .then(response => response.json())
             .then(data => {
               
