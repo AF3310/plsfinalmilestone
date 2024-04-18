@@ -4,7 +4,9 @@ const mysql=require('mysql2')
 const cors=require('cors')
 
 const app=express()
-app.use(cors({ origin: '*', methods: 'GET', optionsSuccessStatus: 200 }));
+
+app.use(cors()); // Allow requests from all origins
+
 app.use(express.json()); 
 
 const db = mysql.createConnection({
