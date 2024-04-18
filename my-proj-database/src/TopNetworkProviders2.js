@@ -4,10 +4,10 @@ const TopNetworkProviders2 = () => {
   const [networkProviders, setNetworkProviders] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8081/topNetworkProviders2')
+    fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topNetworkProviders2')
       .then(response => response.json())
       .then(data => {
-        // Convert average_satellite_count to numbers
+    
         const updatedData = data.map(provider => ({
           ...provider,
           average_satellite_count: parseFloat(provider.average_satellite_count)

@@ -10,7 +10,7 @@ const SatelliteFilter = () => {
     setError(''); // Clear any previous error
 
     try {
-      const response = await fetch('http://localhost:8081/satelliteFilter', {
+      const response = await fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/satelliteFilter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ satelliteName }),

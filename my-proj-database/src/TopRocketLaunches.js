@@ -4,7 +4,7 @@ const TopRocketLaunches = () => {
   const [rocketLaunches, setRocketLaunches] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8081/topRocketLaunches')
+    fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topRocketLaunches')
       .then(response => response.json())
       .then(data => setRocketLaunches(data))
       .catch(error => console.error('Error:', error));

@@ -4,13 +4,13 @@ const TopChannels = () => {
   const [topChannels, setTopChannels] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8081/topChannels')
+    fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topChannels')
       .then(response => response.json())
       .then(data => setTopChannels(data))
       .catch(error => console.error('Error:', error));
   }, []);
 
-  // Function to group channels by language
+
   const groupByLanguage = () => {
     const groupedChannels = {};
     topChannels.forEach(channel => {

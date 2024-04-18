@@ -16,10 +16,10 @@ const db = mysql.createConnection({
 
 });
 
-app.get('/',(re,res)=>{
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/',(re,res)=>{
     return res.json("from backend side side");
 });
-app.get('/data', (req, res) => {
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/data', (req, res) => {
   const email = req.query.email;  
   const sql = `SELECT HRT.Channel, HRT.Frequency,HRT.SatelliteName,HRT.Encryption FROM hostingrelationshiptable HRT 
   INNER JOIN favourites F ON F.ChannelName = HRT.Channel 
@@ -39,7 +39,7 @@ app.get('/data', (req, res) => {
     return res.status(200).json(result);
   });
 });
-app.get('/users',(req,res)=>{
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/users',(req,res)=>{
     const sql="SELECT * FROM CHANNELS"
     db.query(sql,(err,data)=>{
         if (err) return res.json(err);
@@ -47,7 +47,7 @@ app.get('/users',(req,res)=>{
         
     })
 })
-app.get('/users2', (req, res) => {
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/users2', (req, res) => {
   const { latitude, direction } = req.query;
   
   let sql = "SELECT Channel,Position FROM hostingrelationshiptable WHERE longitudeValue > ? AND longitudeValue < ?";
@@ -57,7 +57,7 @@ app.get('/users2', (req, res) => {
     sql += " AND longitudeChar = 'E'";
   } else if (direction === 'W') {
     sql += " AND longitudeChar = 'W'";
-  } else {
+  } else   {
     return res.status(400).json({ error: 'Invalid direction provided' });
   }
   upperb=parseInt(latitude)+10;
@@ -75,7 +75,7 @@ app.get('/users2', (req, res) => {
 
 
 
-app.get('/topNetworkProviders', (req, res) => {
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topNetworkProviders', (req, res) => {
   const sql = `SELECT channels.NetworkProvider, COUNT(*) AS ChannelCount
                FROM channels
                WHERE NetworkProvider IS NOT NULL
@@ -92,7 +92,7 @@ app.get('/topNetworkProviders', (req, res) => {
   });
 });
 
-app.post('/addUser', (req, res) => {
+app.post('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/addUser', (req, res) => {
   const { username, email, bday, gender, location, region, coordinates, direction } = req.body;
   const sql = "INSERT INTO user (username, email, bday, Gender, location, Region, coordinates, direction) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
   const values = [username, email, bday, gender, location, region, coordinates, direction];
@@ -106,7 +106,7 @@ app.post('/addUser', (req, res) => {
   });
 });
 
-app.post('/addFavourites', (req, res) => {
+app.post('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/addFavourites', (req, res) => {
   const { channels, email } = req.body;
 
   // Check if channels and email are provided
@@ -128,7 +128,7 @@ app.post('/addFavourites', (req, res) => {
 
 
 
-app.get('/topRocketLaunches', (req, res) => {
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topRocketLaunches', (req, res) => {
     const sql = `
     SELECT LaunchingRocket, COUNT(*) AS RocketCount 
     FROM satellites
@@ -147,7 +147,7 @@ app.get('/topRocketLaunches', (req, res) => {
       }
     });
   });
-  app.get('/topChannels', (req, res) => {
+  app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topChannels', (req, res) => {
     const sql = `
     SELECT Lang, Channel, SatelliteCount
     FROM (
@@ -180,7 +180,7 @@ app.get('/topRocketLaunches', (req, res) => {
         }
     });
 });
-app.post('/getChannelsByRegion', (req, res) => {
+app.post('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/getChannelsByRegion', (req, res) => {
     const { region } = req.body;
     const sql = `SELECT HRT.Channel, s.region 
                  FROM hostingrelationshiptable HRT
@@ -195,7 +195,7 @@ app.post('/getChannelsByRegion', (req, res) => {
       }
     });
   });
-  app.post('/channelsByHDSDFilter', (req, res) => {
+  app.post('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/channelsByHDSDFilter', (req, res) => {
     const { hdsd } = req.body;
     const sql = `SELECT * FROM channelsnew C WHERE C.hdsd = ?`;
     db.query(sql, [hdsd], (err, result) => {
@@ -210,7 +210,7 @@ app.post('/getChannelsByRegion', (req, res) => {
 
 
 
-app.post('/channelsByLanguageFilter', (req, res) => {
+app.post('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/channelsByLanguageFilter', (req, res) => {
     const { lang } = req.body;
     const sql = `SELECT * FROM channelsnew C 
                  INNER JOIN hostingrelationshiptable HRT 
@@ -226,7 +226,7 @@ app.post('/channelsByLanguageFilter', (req, res) => {
     });
 });
 
-  app.post('/satelliteFilter', (req, res) => {
+  app.post('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/satelliteFilter', (req, res) => {
 
     const { satelliteName } = req.body;
     console.log(satelliteName)
@@ -247,7 +247,7 @@ app.post('/channelsByLanguageFilter', (req, res) => {
     });
   });
 
-  app.get('/topGrowingSatellites', (req, res) => {
+  app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topGrowingSatellites', (req, res) => {
 
     const sqlQuery = `
     SELECT
@@ -279,7 +279,7 @@ LIMIT 5;
     });
 });
 
-app.get('/topNetworkProviders2', (req, res) => {
+app.get('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topNetworkProviders2', (req, res) => {
     const sql = `SELECT C.NetworkProvider, CAST(AVG(DISTINCT HRS.satellite_count) AS DECIMAL(10, 4))AS average_satellite_count
                  FROM channels C
                  INNER JOIN (

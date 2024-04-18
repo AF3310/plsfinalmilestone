@@ -4,10 +4,10 @@ const TopGrowingSatellites = () => {
     const [satellites, setSatellites] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8081/topGrowingSatellites')
+        fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/topGrowingSatellites')
             .then(response => response.json())
             .then(data => {
-                // Convert growth_rate to numbers
+              
                 const updatedData = data.map(satellite => ({
                     ...satellite,
                     growth_rate: parseFloat(satellite.growth_rate)

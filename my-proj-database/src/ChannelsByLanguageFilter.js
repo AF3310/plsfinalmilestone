@@ -11,7 +11,7 @@ const ChannelsByLanguageFilter = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:8081/channelsByLanguageFilter', {
+            const response = await fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/channelsByLanguageFilter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ lang }),

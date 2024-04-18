@@ -10,7 +10,7 @@ const ChannelsByHDSDFilter = () => {
         setError('');
 
         try {
-            const response = await fetch('http://localhost:8081/channelsByHDSDFilter', {
+            const response = await fetch('https://plsfinalmilestone-edwsqlquk-ali-fakhreldins-projects.vercel.app/channelsByHDSDFilter', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ hdsd }),
